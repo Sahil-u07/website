@@ -97,7 +97,7 @@ Parameter | Description | Default
 `TELEMETRY_USERNAME` | Telemetry service username | redhat-chaos
 `TELEMETRY_PASSWORD` | Telemetry service password | No default
 `TELEMETRY_PROMETHEUS_BACKUP` | Enables/disables prometheus data collection | True
-`TELEMTRY_FULL_PROMETHEUS_BACKUP` | If set to False only the /prometheus/wal folder will be downloaded | False
+`TELEMETRY_FULL_PROMETHEUS_BACKUP` | If set to False only the /prometheus/wal folder will be downloaded | False
 `TELEMETRY_BACKUP_THREADS` | Number of telemetry download/upload threads | 5
 `TELEMETRY_ARCHIVE_PATH` | Local path where the archive files will be temporarily stored | /tmp
 `TELEMETRY_MAX_RETRIES` | Maximum number of upload retries (if 0 will retry forever) | 0
@@ -105,7 +105,7 @@ Parameter | Description | Default
 `TELEMETRY_GROUP` | If set will archive the telemetry in the S3 bucket on a folder named after the value | default
 `TELEMETRY_ARCHIVE_SIZE` | The size of the prometheus data archive in KB | 1000
 `TELEMETRY_LOGS_BACKUP` | Logs backup to S3 | False
-`TELEMETRY_FILTER_PATTER` | Filter logs based on certain timestamp patterns | `["(\\w{3}\\s\\d{1,2}\\s\\d{2}:\\d{2}:\\d{2}\\.\\d+).+", ...]`
+`TELEMETRY_FILTER_PATTERN` | Filter logs based on certain timestamp patterns | `["(\\w{3}\\s\\d{1,2}\\s\\d{2}:\\d{2}:\\d{2}\\.\\d+).+", ...]`
 `TELEMETRY_CLI_PATH` | OC CLI path, if not specified will be searched in $PATH | _blank_
 
 {{% alert title="Note" %}} For setting the `TELEMETRY_ARCHIVE_SIZE`, the lower the value the higher the number of archive files produced and uploaded (processed by `TELEMETRY_BACKUP_THREADS` simultaneously). For unstable or slow connections, keep this value low and increase `TELEMETRY_BACKUP_THREADS` so that on upload failure only the failed chunk is retried. {{% /alert %}}
